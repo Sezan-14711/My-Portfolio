@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Rakibul Hassan | Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Projects Section -->
+    <section class="container my-5 pt-5">
+        <h1 class="text-center mb-4 text-warning">My Projects</h1>
+        <div class="row g-4 equal-height">
+            <div class="col-md-4">
+                <div class="card bg-dark text-light h-100">
+                    <img src="assets/images/p2.jpg" class="card-img-top" alt="Campus Transport Management System(CTMS)">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Campus Transport Management System(CTMS)</h5>
+                        <p class="card-text">Campus Transport Management System: Django-based platform with security,
+                            scheduling, notifications, QR passes, and scalable database.</p>
+                        <a href="https://github.com/RR0327/Project-CTMS" target="_blank"
+                            class="btn btn-sm btn-primary mt-auto">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-dark text-light h-100">
+                    <img src="assets/images/p3.jpg" class="card-img-top"
+                        alt="All-in-One University App - Revolutionizing Student Life">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">All-in-One University App - Revolutionizing Student Life</h5>
+                        <p class="card-text">Inventous 4.1 - NEOFETCH HACKATHON: Django university management system for
+                            streamlined academic and administrative processes.</p>
+                        <a href="https://github.com/RR0327/All-In-One-University" target="_blank"
+                            class="btn btn-sm btn-primary mt-auto">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-dark text-light h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Hablu-mission-complete</h5>
+                        <p class="card-text">A Django REST Framework backend API designed to improve personal growth in
+                            academics, mental health, fitness, and career development through mission-based challenges.
+                            Built for the "Hablu's Heartbreak" challenge.</p>
+                        <a href="https://github.com/RR0327/Hablu-mission-complete" target="_blank"
+                            class="btn btn-sm btn-primary mt-auto">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-dark text-light h-100">
+                    <img src="assets/images/p4.jpg" class="card-img-top" alt="Campus-Events-Hub">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Campus-Events-Hub</h5>
+                        <p class="card-text">Campus Event Management System (CEMS) is a mobile-responsive, full-stack
+                            platform that allows students to register for events and empowers club admins to create,
+                            manage, and monitor them.</p>
+                        <a href="https://github.com/RR0327/Campus-Events-Hub" target="_blank"
+                            class="btn btn-sm btn-primary mt-auto">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-dark text-light h-100">
+                    <img src="assets/images/p1.jpg" class="card-img-top" style="height: 200px; object-fit: cover;"
+                        alt="Bluetooth-Controlled Car">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Bluetooth-Controlled Car</h5>
+                        <p class="card-text">Bluetooth-controlled Arduino car demonstrating IoT, robotics, real-time
+                            control, and mobile integration.</p>
+                        <a href="https://www.linkedin.com/in/md-rakibul-hassan-miyaji/details/projects/" target="_blank"
+                            class="btn btn-sm btn-primary mt-auto">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Script to load navbar & footer -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Load Navbar
+            fetch('navbar.html')
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById('navbar-placeholder').innerHTML = html;
+                    setActiveLink(); // highlight active link after loading navbar
+                });
+
+            // Load Footer
+            fetch('footer.html')
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById('footer-placeholder').innerHTML = html;
+                });
+
+            // Function to highlight the active link
+            function setActiveLink() {
+                const currentPath = window.location.pathname;
+                const links = document.querySelectorAll('#navbar-placeholder a.nav-link');
+
+                links.forEach(link => {
+                    // Compare the link's href with the current URL path
+                    if (link.getAttribute('href') === '.' + currentPath || link.getAttribute('href') === currentPath) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
